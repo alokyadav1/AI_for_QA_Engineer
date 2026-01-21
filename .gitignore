@@ -1,0 +1,12 @@
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+
+# Experiments
+experiments/**/node_modules/
+experiments/**/__pycache__/
+*.log

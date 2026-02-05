@@ -48,33 +48,6 @@ Include:
 - Environment variable usage
 
 ```
-
-## REST Assured
-
-```
-Act as a REST Assured automation expert.
-
-Generate clean, reusable REST Assured test cases.
-Use:
-- RequestSpecification
-- Assertions
-- Proper structure
-
-```
-
-## Python
-
-```
-Act as a Python automation QA engineer.
-
-Generate pytest-based API automation scripts.
-Include:
-- Requests
-- Assertions
-- Negative test handling
-
-```
-
 ## Review
 
 ```

@@ -1,5 +1,39 @@
 # API Testing with Postman (Fakestore Scenario)
 
+## 1. Introduction to API Testing
+
+API Testing is a process of sending requests to an API and analyzing the responses to verify than the API is working as expected under various conditions.
+
+
+## 2. Types of API Testing
+
+Focus on these four in your daily work:
+
+1.  **Functional**: "Does it work?" (e.g., Create User -> Verify User in DB).
+2.  **Negative**: "Does it fail correctly?" (e.g., Create User with existing email -> Expect 409 Conflict).
+3.  **Security**: "Am I allowed?" (e.g., Access Admin data as a Guest).
+4.  **Load**: "Can it handle the crowd?" (e.g., 1000 users hitting search simultaneously).
+
+## 3. What is usually tested in API?
+
+Do not just check "it works". Check these 5 pillars:
+
+1.  **Status Codes**: The HTTP standard signal (200 success, 400 bad request, 500 server error).
+2.  **Response Payload**: Is the data accurate? (e.g., Is the price correct? Is the ID unique?)
+3.  **Headers**: Are content-type (`application/json`) and auth tokens present?
+4.  **Performance**: Did the response return in < 500ms?
+5.  **Error Handling**: If I send a string instead of a number, does the API fail gracefully or crash?
+6.  **Schema Validation**: Does the response match the expected structure?
+7. **Data Integrity**: Is the data consistent across the system?
+8. **Security**: Are authentication and authorization working correctly?
+
+## 4. QA Mentality while testing APIs
+
+- **Trust Nothing**: A `200 OK` status does NOT mean the feature works. The body might say `{"error": "failed"}`.
+- **The UI is a Liar**: The UI might mask API errors. Test the raw response.
+- **Break the Schema**: Send integers where strings are expected. Send empty JSONs. The API should handle it, not crash.
+- **Validate the Negative**: 50% of your tests should be negative (Invalid IDs, missing tokens, bad data).
+
 ## Real QA Problem
 
 You are the QA Engineer for an E-commerce platform. The Backend Team has released a new "Product Management" API.
@@ -188,3 +222,9 @@ The CLI output is good for logs, but stakeholders need HTML reports.
 Export your collection and save it to git.
 
 - **File**: `experiments/03-postman/fakestoreAPI.postman_collection.json`
+
+For more information on Postman, visit [Postman Documentation](https://learning.postman.com/docs/)
+
+For Learning API Testing, visit [Postman API Testing Tutorial](https://academy.postman.com/path/api-testing-path)
+
+API Testing Basics [API Testing Basics](https://www.postman.com/api-platform/api-testing/)
